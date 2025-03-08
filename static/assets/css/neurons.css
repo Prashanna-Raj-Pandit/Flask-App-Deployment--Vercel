@@ -1,0 +1,47 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+    color: limegreen;
+    font-family: 'Courier New', monospace;
+}
+
+.animation-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.floating-code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.floating-code span {
+    position: absolute;
+    color: rgba(0, 255, 0, 0.7);
+    font-size: 1.2rem;
+    white-space: nowrap;
+    animation: floatCode 10s linear infinite;
+}
+
+@keyframes floatCode {
+    0% {
+        transform: translateY(100vh);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
