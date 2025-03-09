@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="resume">
+    <h1 class="fade-in">{{ profile.name }}</h1>
+    <p class="fade-in delay-1">{{ profile.address }}</p>
+    <div class="social-links fade-in delay-2">
+        <a href="{{ profile.linkedin }}">LinkedIn</a> | <a href="{{ profile.github }}">GitHub</a>
+    </div>
+
+    <h2>Education</h2>
+    <div class="resume-item animate-card">
+        <p><strong>Southern Illinois University Edwardsville</strong> - Master's in Computer Science (GPA: 3.7/4)</p>
+        <p><strong>Tribhuvan University</strong> - Bachelor's in Electronics Engineering (GPA: 3.65/4)</p>
+    </div>
+
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        {% for category, items in skills.items() %}
+        <div class="skill-card animate-card">
+            <h3>{{ category.capitalize() }}</h3>
+            <ul>
+                {% for item in items %}<li>{{ item }}</li>{% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Experience</h2>
+    <div class="resume-item animate-card">
+        <p><strong>Research Assistant</strong> - SIUE (Jan 2025 - Present)</p>
+        <p><strong>Software Engineer Intern</strong> - Vrit Technologies (Apr 2023 - Jul 2023)</p>
+    </div>
+</div>
+{% endblock %}

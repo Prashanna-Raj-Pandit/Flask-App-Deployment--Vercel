@@ -1,22 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Science Animation</title>
-    <link rel="stylesheet" href="static/assets/css/neurons.css">
-</head>
-<body>
-    <div class="animation-container">
-        <canvas id="matrixCanvas"></canvas>
-        <div class="floating-code">
-            <span>if (code) { innovate(); }</span>
-            <span>while (true) { learn(); }</span>
-            <span>def solve_problem():</span>
-            <span>System.out.println("Hello, World!");</span>
-            <span>console.log("Debugging...");</span>
+{% extends "base.html" %}
+{% block content %}
+<div class="hero" style="background-image: url('{{ url_for('static', filename='images/hero-bg.jpg') }}');">
+    <div class="hero-overlay">
+        <h1 class="fade-in">{{ profile.name }}</h1>
+        <p class="fade-in delay-1">AI & Computer Vision Specialist</p>
+        <div class="social-links fade-in delay-2">
+            <a href="{{ profile.linkedin }}" target="_blank">LinkedIn</a>
+            <a href="{{ profile.github }}" target="_blank">GitHub</a>
         </div>
     </div>
-    <script src="static/assets/js/neurons.js"></script>
-</body>
-</html>
+</div>
+
+<section class="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-container">
+        {% for category, items in skills.items() %}
+        <div class="skill-card animate-card">
+            <h3>{{ category.capitalize() }}</h3>
+            <ul>
+                {% for item in items %}<li>{{ item }}</li>{% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+        {% for project in projects %}
+        <div class="project-card animate-card">
+            <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}">
+            <div class="project-content">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+                <a href="{{ url_for('project', title=project.title) }}" class="btn">Explore Project</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="publications">
+    <h2 class="section-title">Research Publications</h2>
+    <div class="publication-card animate-card">
+        <h3>Automation of Driving License Test</h3>
+        <p>Presented at ICT-CEEL 2023 | Best Paper Award</p>
+        <a href="#" target="_blank" class="btn">Read Paper</a>
+    </div>
+</section>
+{% endblock %}
