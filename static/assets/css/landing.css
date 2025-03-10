@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #2e3141;
+    color: #ecf0f1;
+    overflow-x: hidden;
+}
+
+/* Landing Section */
+.landing {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Canvas Background Animation */
+.canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#ai-nodes {
+    width: 100%;
+    height: 100%;
+}
+
+/* Content Container */
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Flash Messages */
+.flash-container {
+    margin-bottom: 20px;
+}
+
+#flash-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flash {
+    background: #27ae60;
+    color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ecf0f1;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h1 span {
+    color: #3498db;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #bdc3c7;
+    margin-bottom: 30px;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-bottom: 30px;
+}
+
+.social-icons .icons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+}
+
+.social-icons .icons li {
+    display: inline-block;
+}
+
+.social-icons .icons a {
+    color: #ecf0f1;
+    font-size: 2rem; /* Increased size for visibility */
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons .icons a:hover {
+    color: #3498db;
+    transform: translateY(-5px);
+}
+
+.social-icons .icons a .label {
+    display: none; /* Hidden for screen readers */
+}
+
+/* Ensure Font Awesome classes are explicitly styled */
+.icon.brands {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+}
+
+/* CTA Button */
+.actions .btn {
+    display: inline-block;
+    background: #3498db;
+    color: #ecf0f1;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.actions .btn:hover {
+    background: #2980b9;
+    transform: translateY(-3px);
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1s; }
+.delay-3 { animation-delay: 1.5s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    p { font-size: 1.2rem; }
+    .social-icons .icons a { font-size: 1.8rem; }
+    .actions .btn { padding: 12px 25px; font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    p { font-size: 1rem; }
+    .social-icons .icons { gap: 15px; }
+    .social-icons .icons a { font-size: 1.5rem; }
+}

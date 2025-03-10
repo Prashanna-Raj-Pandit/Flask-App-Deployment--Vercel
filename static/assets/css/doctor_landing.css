@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #27445D; /* Dark blue base */
+    color: #EFE9D5; /* Light beige text */
+    overflow-x: hidden;
+}
+
+/* Doctor Landing Section */
+.doctor-landing {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Canvas Background Animation */
+.canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#heart-neurons {
+    width: 100%;
+    height: 100%;
+}
+
+/* Content Container */
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Main Content */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #EFE9D5;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #71BBB2; /* Light teal for secondary text */
+    margin-bottom: 20px;
+}
+
+/* Info Section */
+.info {
+    margin-bottom: 30px;
+}
+
+.info p {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.info i {
+    color: #497D74; /* Mid-tone teal for icons */
+}
+
+/* Buttons */
+.actions .btn {
+    display: inline-block;
+    background: #497D74;
+    color: #EFE9D5;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 10px;
+}
+
+.actions .btn:hover {
+    background: #71BBB2;
+    transform: translateY(-3px);
+}
+
+.actions .btn.secondary {
+    background: transparent;
+    border: 2px solid #71BBB2;
+}
+
+.actions .btn.secondary:hover {
+    background: #71BBB2;
+    border-color: #71BBB2;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1s; }
+.delay-3 { animation-delay: 1.5s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    p { font-size: 1.2rem; }
+    .info p { font-size: 1rem; }
+    .actions .btn { padding: 12px 25px; font-size: 1rem; }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    p { font-size: 1rem; }
+    .actions .btn { display: block; margin: 10px auto; width: 80%; }
+}

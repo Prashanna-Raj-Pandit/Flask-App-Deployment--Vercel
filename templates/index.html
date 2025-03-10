@@ -1,12 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="hero" style="background-image: url('{{ url_for('static', filename='images/hero-bg.jpg') }}');">
+<div class="hero" style="background-image: url('{{ url_for('static', filename='images/pic02.jpg') }}');">
     <div class="hero-overlay">
         <h1 class="fade-in">{{ profile.name }}</h1>
-        <p class="fade-in delay-1">AI & Computer Vision Specialist</p>
+        <p class="fade-in delay-1">AI & Computer Vision Enthusiast</p>
         <div class="social-links fade-in delay-2">
             <a href="{{ profile.linkedin }}" target="_blank">LinkedIn</a>
             <a href="{{ profile.github }}" target="_blank">GitHub</a>
+        </div>
+        <div class="social-links fade-in delay-2">
+            <a href="{{ profile.linkedin }}" target="_blank">Landing Page 1</a>
+            <a href="{{ profile.github }}" target="_blank">Landing Page 2</a>
+
+            <a href="{{ profile.linkedin }}" target="_blank">Landing Page 3</a>
+            <a href="{{ profile.github }}" target="_blank">Landing Page 4</a>
         </div>
     </div>
 </div>

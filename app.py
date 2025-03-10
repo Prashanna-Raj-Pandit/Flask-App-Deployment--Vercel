@@ -37,6 +37,10 @@ projects = [
 def home():
     return render_template('index.html', profile=profile, skills=skills, projects=projects)
 
+
+@app.route('/doctor')
+def landing():
+    return render_template('test.html')
 @app.route('/project/<title>')
 def project(title):
     project = next((p for p in projects if p['title'] == title), None)

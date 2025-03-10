@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashanna Raj Pandit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/landing.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="landing">
+        <div class="canvas-container">
+            <canvas id="ai-nodes"></canvas>
+        </div>
+        <div class="content">
+            <div class="inner">
+                <!-- Flash Messages -->
+                <div class="flash-container">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <div id="flash-messages" class="fade-in">
+                        {% for message in messages %}
+                        <p class="flash">{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
+                </div>
+
+                <!-- Main Content -->
+                <h1 class="fade-in">Hey there! I’m <span>Prashanna</span></h1>
+                <p class="fade-in delay-1">A Computer Science Student Exploring AI & Beyond</p>
+
+                <!-- Social Media Icons -->
+                <div class="social-icons fade-in delay-2">
+                    <ul class="icons">
+                        <li><a href="https://www.facebook.com/prashanna.raj.5" class="icon brands fa-facebook-f" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="https://www.instagram.com/prashannaraj5950" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/prashanna-raj-pandit-1576b7237/" class="icon brands fa-linkedin-in" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://github.com/Prashanna-Raj-Pandit" class="icon brands fa-github" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="actions fade-in delay-3">
+                    <a href="#" target="_blank" class="btn">Get My CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+</body>
+</html>
+
